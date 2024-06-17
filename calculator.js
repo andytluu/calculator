@@ -22,7 +22,7 @@ function operate(fNum, sNum, oper){
         case "-":
             subtract(fNum, sNum);
             break;
-        case "*":
+        case "x":
             multiply(fNum, sNum);
             break;
         case "/":
