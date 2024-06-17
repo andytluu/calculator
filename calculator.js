@@ -30,9 +30,24 @@ function operate(fNum, sNum, oper){
             break;
     }
 }
+
+const numBtns = document.querySelectorAll(".nums");
+const display = document.querySelector("#display");
+const clear = document.querySelector("#del");
 let firstNum = 0;
 let secondNum = 0;
 let operator = "";
+let store = 0;
+
+clear.addEventListener("click", () => {
+    display.textContent = "";
+});
+numBtns.forEach((elem) => {
+    elem.addEventListener("click", () => {
+        let txt = elem.textContent;
+        display.append(txt);
+    });
+});
 console.log(add(1,2));
 console.log(subtract(2,1));
 console.log(multiply(2,2));
