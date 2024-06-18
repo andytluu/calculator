@@ -53,13 +53,23 @@ clear.addEventListener("click", () => {
     console.log(secondNum);
 });
 equal.addEventListener("click", () => {
-    secondNum = parseInt(display.textContent);
-    store = operate(firstNum,secondNum,operator);
-    display.textContent = store.toString();
-    firstNum = undefined;
-    secondNum = undefined;
+    if(firstNum === undefined && secondNum === undefined && display.textContent.length === 0){
+        display.textContent = "";
+        
+    }
+    else if(operator.length === 0){
+        let txt = display.textContent;
+        display.textContent = txt;
+    }
+    else{
+        secondNum = parseInt(display.textContent);
+        store = operate(firstNum,secondNum,operator);
+        display.textContent = store.toString();
+        firstNum = undefined;
+        secondNum = undefined;
+    }
+    //console.log(store);
 
-    console.log(result);
 });
 oper.forEach((elem) => {
     elem.addEventListener("click", () => {
