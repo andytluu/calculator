@@ -47,7 +47,13 @@ let store = 0;
 
 
 dot.addEventListener("click", ()=>{
-    display.append(".");
+    let checkDot = display.textContent;
+    //True if no dot is in the number
+    if(!checkDot.includes(".")){
+        display.append(".");
+    }
+
+
 });
 
 clear.addEventListener("click", () => {
@@ -92,11 +98,11 @@ oper.forEach((elem) => {
         //store the first number and the operator
         if(firstNum === undefined){
             operator = elem.textContent;
-            firstNum = parseInt(display.textContent);
+            firstNum = parseFloat(display.textContent);
         }
         //when operator is pressed again after first number is stored
         else{
-            secondNum = parseInt(display.textContent);
+            secondNum = parseFloat(display.textContent);
             // Message when trying to divide by 0
             if(secondNum === 0 && operator === "/"){
                 display.textContent = "You can't divide by 0";
