@@ -76,7 +76,7 @@ equal.addEventListener("click", () => {
         display.textContent = txt;
     }
     else{
-        secondNum = parseInt(display.textContent);
+        secondNum = parseFloat(display.textContent);
         if(secondNum === 0 && operator === "/"){
             display.textContent = "You can't divide by 0";
             firstNum = undefined;
@@ -85,7 +85,7 @@ equal.addEventListener("click", () => {
         }
         else{
             store = operate(firstNum,secondNum,operator);
-            display.textContent = store.toString();
+            display.textContent = store.toFixed(2).toString();
             firstNum = undefined;
             secondNum = undefined;
         }
@@ -113,7 +113,7 @@ oper.forEach((elem) => {
             // display result from previous operator and store result for next operation
             else{
                 store = operate(firstNum,secondNum,operator);
-                display.textContent = store.toString();
+                display.textContent = store.toFixed(2).toString();
                 firstNum = store;
                 operator = elem.textContent;
                 secondNum = undefined;
