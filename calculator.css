@@ -6,11 +6,13 @@ body{
 #container{
     display: flex;
     flex-wrap: wrap;
-    width: 80px;
+    width: 91px;
+    border: 1px solid #999999;
+    gap:1px;
 }
 
 #display{
-    width: 65px;
+    width: 95px;
     height: 10px;
     padding-bottom: 10px;
     border-style: solid;
@@ -32,4 +34,13 @@ body{
 
 #dot{
     background-color: lightsalmon;
+}
+
+button{
+    border-radius: 10px;
+    padding: 9px;
+}
+
+#del{
+    width: 60px;
 }
